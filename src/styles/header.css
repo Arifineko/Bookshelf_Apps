@@ -1,0 +1,16 @@
+header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    padding: 0 40px;
+}
+
+nav ul {
+    display: flex;
+    gap: 32px;
+}
+
+a {
+    color: black;
+}

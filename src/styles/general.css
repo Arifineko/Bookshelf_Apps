@@ -1,0 +1,11 @@
+* {
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Mona-Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 1400px;
+}
