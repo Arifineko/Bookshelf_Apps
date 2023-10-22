@@ -1,0 +1,86 @@
+.bg-form {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+
+}
+
+.content-form {
+    background-color: white;
+    width: 500px;
+    position: relative;
+    border-radius: 8px;
+}
+
+
+.close-form {
+    position: absolute;
+    font-size: 40px;
+    transform: rotate(45deg);
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.data-form {
+    padding: 30px;
+    padding-bottom: 0;
+}
+
+.title-form {
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.input-form-container {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+}
+
+.form-input {
+    padding: 8px 8px;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: rgb(205, 203, 203);
+    border-width: 1px;
+    margin-bottom: 20px;
+}
+
+.label-input {
+    margin-bottom: 10px;
+    color: rgb(56, 56, 56);
+    font-size: 14px;
+}
+
+.add-button-container {
+    background-color: rgb(240, 239, 239);
+    height: 60px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.tambahkan-buku-button {
+    padding: 10px 16px;
+    border: none;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 8px;
+    font-size: 12px;
+    margin-right: 16px;
+}

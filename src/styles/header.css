@@ -14,3 +14,10 @@ nav ul {
 a {
     color: black;
 }
+
+.v {
+    width: 2px;
+    height: 50%;
+    margin-right: 24px;
+    background: #e7e7e9;
+}

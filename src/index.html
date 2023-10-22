@@ -9,12 +9,15 @@
     <link rel="stylesheet" href="styles/general.css">
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/hero.css">
+    <link rel="stylesheet" href="styles/form.css">
 
     <!-- font style -->
     <link href="https://fonts.cdnfonts.com/css/mona-sans" rel="stylesheet">
-                
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="js-body">
     <header>
         <div>Logo</div>
         <nav>
@@ -28,15 +31,54 @@
         </nav>
     </header>
     <main>
-        <section class="hero-background">
-            <div class="search-nav">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="#A0AEC0" role="img" class="icon fill-current search-icon">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.6002 12.0498C9.49758 12.8568 8.13777 13.3333 6.66667 13.3333C2.98477 13.3333 0 10.3486 0 6.66667C0 2.98477 2.98477 0 6.66667 0C10.3486 0 13.3333 2.98477 13.3333 6.66667C13.3333 8.15637 12.8447 9.53194 12.019 10.6419C12.0265 10.6489 12.0338 10.656 12.0411 10.6633L15.2935 13.9157C15.6841 14.3063 15.6841 14.9394 15.2935 15.33C14.903 15.7205 14.2699 15.7205 13.8793 15.33L10.6269 12.0775C10.6178 12.0684 10.6089 12.0592 10.6002 12.0498ZM11.3333 6.66667C11.3333 9.244 9.244 11.3333 6.66667 11.3333C4.08934 11.3333 2 9.244 2 6.66667C2 4.08934 4.08934 2 6.66667 2C9.244 2 11.3333 4.08934 11.3333 6.66667Z"></path>
-                </svg>
-                <input type="text" placeholder="Search..." class="search-input">
+        <section class="hero-background"></section>
+        <section class="hero-section">
+            <div>
+                <h1 class="hero-title">Pustaka Digital Pribadi Anda</h1>
+                <p class="hero-subtitle">Buat Pustaka Digital Pribadi: Simpan, Temukan, Bagikan Buku-buku Favorit Anda dengan Mudah di ShelfBook!</p>
+            </div>
+            <div class="search-container">
+                <div>
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="#A0AEC0" role="img" class="icon fill-current search-icon">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.6002 12.0498C9.49758 12.8568 8.13777 13.3333 6.66667 13.3333C2.98477 13.3333 0 10.3486 0 6.66667C0 2.98477 2.98477 0 6.66667 0C10.3486 0 13.3333 2.98477 13.3333 6.66667C13.3333 8.15637 12.8447 9.53194 12.019 10.6419C12.0265 10.6489 12.0338 10.656 12.0411 10.6633L15.2935 13.9157C15.6841 14.3063 15.6841 14.9394 15.2935 15.33C14.903 15.7205 14.2699 15.7205 13.8793 15.33L10.6269 12.0775C10.6178 12.0684 10.6089 12.0592 10.6002 12.0498ZM11.3333 6.66667C11.3333 9.244 9.244 11.3333 6.66667 11.3333C4.08934 11.3333 2 9.244 2 6.66667C2 4.08934 4.08934 2 6.66667 2C9.244 2 11.3333 4.08934 11.3333 6.66667Z"></path>
+                    </svg>
+                    <input type="text" class="search-input" placeholder="Cari Buku di Pustaka Anda">
+                </div>
+                <div class="js-add-book">
+                    <svg style="width: 50px;" xmlns="http://www.w3.org/2000/svg" id="add" x="0" y="0" version="1.1" viewBox="0 0 29 29" xml:space="preserve"><path d="M14.5 27.071c-6.893 0-12.5-5.607-12.5-12.5s5.607-12.5 12.5-12.5S27 7.678 27 14.571s-5.607 12.5-12.5 12.5zm0-23c-5.79 0-10.5 4.71-10.5 10.5s4.71 10.5 10.5 10.5S25 20.36 25 14.571s-4.71-10.5-10.5-10.5z"></path><path d="M14.5 21.571a1 1 0 0 1-1-1v-12a1 1 0 0 1 2 0v12a1 1 0 0 1-1 1z"></path><path d="M20.5 15.571h-12a1 1 0 0 1 0-2h12a1 1 0 0 1 0 2z"></path></svg>
+                </div>
+            </div>
+            <div class="search-suggestions-container">
+                <ul class="search-suggestions">
+                    <li>Trending searches</li>
+                    <li class="search-results">Filosofi Hidup</li>
+                    <li class="search-results">Sejarah Dunia</li>
+                    <li class="search-results">Buku Inspiratif</li>
+                    <li class="search-results">Self-Help Terpopuler</li>
+                </ul>
             </div>
         </section>
+        
     </main>
+    <div class="bg-form js-bg-form">
+        <div class="content-form">
+            <div class="close-form js-close">+</div>
+            <div class="data-form">
+                <div class="title-form">Tambah Buku</div>
+                <div class="input-form-container">
+                    <p class="label-input">Judul</p>
+                    <input type="text" class="form-input">
+                    <p class="label-input">Penulis</p>
+                    <input type="text" class="form-input">
+                    <p class="label-input">Tahun</p>
+                    <input type="number" class="form-input">
+                </div>
+            </div>
+            <div class="add-button-container">
+                <button class="tambahkan-buku-button">Tambahkan Buku</button>
+            </div>
+        </div>
+    </div>
     <script src="scripts/main.js"></script>
 </body>
 </html>
