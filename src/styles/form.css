@@ -85,6 +85,7 @@ input {
     border-radius: 8px;
     font-size: 12px;
     margin-right: 16px;
+    cursor: pointer;
 }
 
 .label-inline {

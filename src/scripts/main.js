@@ -6,10 +6,18 @@ render()
 const bookSubmit = document.getElementById('inputBook');
 
 bookSubmit.addEventListener('submit', (e) => {
-    const bookTitle = document.getElementById('inputBookTitle').value;
-    const bookAuthor = document.getElementById('inputBookAuthor').value;
-    const bookYear = document.getElementById('inputBookYear').value;
-    const bookIsComplete = document.getElementById('inputBookIsComplete').checked;
+
+    e.preventDefault();
+
+    const bookTitleInput = document.getElementById('inputBookTitle');
+    const bookAuthorInput = document.getElementById('inputBookAuthor');
+    const bookYearInput = document.getElementById('inputBookYear');
+    const bookIsCompleteInput = document.getElementById('inputBookIsComplete');
+
+    const bookTitle = bookTitleInput.value;
+    const bookAuthor = bookAuthorInput.value;
+    const bookYear = bookYearInput.value;
+    const bookIsComplete = bookIsCompleteInput.checked;
 
     const generatedId = generateId();
 
@@ -17,16 +25,25 @@ bookSubmit.addEventListener('submit', (e) => {
 
     dataBook.push(dataInput);
 
-    console.log(dataInput)
-
     render()
 
     saveData()
 
-    e.preventDefault();
-})
+    bookTitleInput.value = '';
+    bookAuthorInput.value = '';
+    bookYearInput.value = '';
+    bookIsCompleteInput.checked = false;
 
+    swal({
+        title: "Sukses!",
+        text: "Buku telah ditambahkan ke koleksi Anda.",
+        icon: "success",
+        button: "oke",
+    });
 
+    document.querySelector('.bg-form').style.display = 'none';
+    bodyEl.classList.remove('disableScroll');
+});
 
 function displayBook(dataInput) {
 
@@ -96,14 +113,30 @@ function displayBook(dataInput) {
         buttonHapus.innerText = 'Hapus Buku';
 
         buttonHapus.addEventListener('click', () => {
-            const bookTarget = dataInput.id;
+            swal({
+                title: "Apakah Anda yakin ingin menghapus buku ini dari koleksi Anda?",
+                text: "Menghapus buku ini akan menghilangkan semua data terkait. Apakah Anda yakin ingin melanjutkan?",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        const bookTarget = dataInput.id;
 
-            const bookIndex = dataBook.findIndex(book => book.id === bookTarget);
-            if (bookIndex !== -1 && !dataInput.isComplete) {
-                dataBook.splice(bookIndex, 1);
-                render()
-                saveData()
-            }
+                        const bookIndex = dataBook.findIndex(book => book.id === bookTarget);
+                        if (bookIndex !== -1 && !dataInput.isComplete) {
+                            dataBook.splice(bookIndex, 1);
+                            render()
+                            saveData()
+                        }
+                        swal("Berhasil! Buku telah dihapus dari koleksi Anda.", {
+                            icon: "success",
+                        });
+                    } else {
+                        swal("Penghapusan Dibatalkan: Buku tetap aman dalam koleksi Anda.");
+                    }
+                });
         })
 
         divBookButton.append(buttonSelesaiDibaca, buttonHapus);
@@ -130,7 +163,23 @@ function displayBook(dataInput) {
         buttonHapus.innerText = 'Hapus Buku';
 
         buttonHapus.addEventListener('click', () => {
-            deleteBook(dataInput)
+            swal({
+                title: "Apakah Anda yakin ingin menghapus buku ini dari koleksi Anda?",
+                text: "Menghapus buku ini akan menghilangkan semua data terkait. Apakah Anda yakin ingin melanjutkan?",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        deleteBook(dataInput)
+                        swal("Berhasil! Buku telah dihapus dari koleksi Anda.", {
+                            icon: "success",
+                        });
+                    } else {
+                        swal("Penghapusan Dibatalkan: Buku tetap aman dalam koleksi Anda.");
+                    }
+                });
         })
         divBookButton.append(buttonBelumSelesaiDibaca, buttonHapus);
     }
@@ -139,7 +188,6 @@ function displayBook(dataInput) {
 
     return outerDiv;
 }
-
 
 function generateId() {
     return +new Date();
@@ -155,8 +203,6 @@ function generateBook(id, title, author, year, isComplete) {
     }
 }
 
-
-
 function render() {
     const bookIncomplete = document.getElementById('incompleteBookshelfList');
     const bookComplete = document.getElementById('completeBookshelfList');
@@ -167,7 +213,6 @@ function render() {
     bookComplete.innerHTML = '';
 
     if (dataBook.length === 0) {
-        // Display a message when there are no books
 
         bookIncomplete.innerHTML = emptyBookIncomplete.outerHTML;
         bookComplete.innerHTML = emptyBookComplete.outerHTML;
@@ -187,12 +232,10 @@ function render() {
             }
         }
 
-        // Display a message if bookIncomplete is empty
         if (incompleteIsEmpty) {
             bookIncomplete.innerHTML = emptyBookIncomplete.outerHTML;
         }
 
-        // Display a message if bookComplete is empty
         if (completeIsEmpty) {
             bookComplete.innerHTML = emptyBookComplete.outerHTML;
         }
@@ -245,3 +288,5 @@ function emptyComplete() {
 
     return emptyBookDiv;
 }
+
+
