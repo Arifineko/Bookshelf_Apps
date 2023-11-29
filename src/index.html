@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/hero.css">
     <link rel="stylesheet" href="styles/form.css">
+    <link rel="stylesheet" href="styles/content.css">
 
     <!-- font style -->
     <link href="https://fonts.cdnfonts.com/css/mona-sans" rel="stylesheet">
@@ -58,27 +59,50 @@
                 </ul>
             </div>
         </section>
-        
-    </main>
-    <div class="bg-form js-bg-form">
-        <div class="content-form">
-            <div class="close-form js-close">+</div>
-            <div class="data-form">
-                <div class="title-form">Tambah Buku</div>
-                <div class="input-form-container">
-                    <p class="label-input">Judul</p>
-                    <input type="text" class="form-input">
-                    <p class="label-input">Penulis</p>
-                    <input type="text" class="form-input">
-                    <p class="label-input">Tahun</p>
-                    <input type="number" class="form-input">
+        <div class="bg-form js-bg-form">
+            <form class="content-form" id="inputBook">
+                <div class="close-form js-close">+</div>
+                <div class="data-form">
+                    <div class="title-form">Tambah Buku</div>
+                    <div class="input-form-container">
+                        <div class="label-input">
+                            <label for="inputBookTitle">Judul</label>
+                            <input id="inputBookTitle" type="text" class="form-input" required>
+                        </div>
+                        <div class="label-input">
+                            <label for="inputBookAuthor">Penulis</label>
+                            <input id="inputBookAuthor" type="text" class="form-input" required>
+                        </div>
+                        <div class="label-input">
+                            <label for="inputBookYear">Tahun</label>
+                            <input id="inputBookYear" type="number" class="form-input" required>
+                        </div>
+                        <div class="label-inline">
+                            <label for="inputBookIsComplete">Selesai dibaca</label>
+                            <input id="inputBookIsComplete" type="checkbox">
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="add-button-container">
-                <button class="tambahkan-buku-button">Tambahkan Buku</button>
-            </div>
+                <div class="add-button-container">
+                    <button id="bookSubmit" class="tambahkan-buku-button" type="submit">Masukan Buku ke Rak</button>
+                </div>
+            </form>
         </div>
-    </div>
+        <section class="content-section">
+            <div>
+                <div class="headline-content">Belum selesai dibaca</div>
+                <div class="books-grid" id="incompleteBookshelfList"></div>
+            </div>
+            <div>
+                <div class="headline-content">Sudah Selesai Dibaca</div>
+                <div class="books-grid" id="completeBookshelfList"></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="tes"></div>
+    </footer>
+    <script src="scripts/form.js"></script>
     <script src="scripts/main.js"></script>
 </body>
 </html>
