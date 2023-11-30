@@ -289,4 +289,3 @@ function emptyComplete() {
     return emptyBookDiv;
 }
 
-
