@@ -53,10 +53,6 @@
     margin-top: 20px;
     font-size: 30px;
     font-weight: bold;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 98%;
 }
 
 .author {
@@ -103,12 +99,41 @@
 }
 
 .empty-book {
-    grid-column: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
     opacity: 0.5;
+}
 
+@media only screen and (max-width: 767px) {
+
+    /* Ubah jumlah kolom menjadi 1fr pada layar ponsel */
+    .books-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content-section {
+        padding: 0 20px;
+    }
+
+    .book-title {
+        font-size: 26px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* Tetapkan grid-column: 2; pada layar desktop (lebar layar minimal 768px) */
+    .empty-book {
+        grid-column: 2;
+    }
+
+    .book-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 98%;
+    }
 }

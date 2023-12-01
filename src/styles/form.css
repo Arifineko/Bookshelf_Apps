@@ -96,3 +96,9 @@ input {
     white-space: nowrap;
     gap: 10px;
 }
+
+@media only screen and (max-width: 767px) {
+    .content-form {
+        width: 365px;
+    }
+}
